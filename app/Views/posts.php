@@ -47,7 +47,7 @@
                     <img src="/img/prof.png" alt="Profile Image" class="profile-pic">
                     <div style="display: flex; flex-direction: column;">
                         <span class="text">Yusril Mubaroq</span>
-                        <span class="role">Karawang</span>
+                        <span class="role">Tasikmalaya</span>
                     </div>
                 </a>
             </li>
