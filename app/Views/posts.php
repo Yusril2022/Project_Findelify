@@ -16,7 +16,7 @@
     <!-- SIDEBAR -->
     <section id="sidebar" class="hide">
         <a href="#" class="brand">
-            <i class='bx bx-desktop'></i>       
+        <img src="/img/logo.png" alt="Logo Icon" style="width: 100%; ;">       
 
             <span class="text">Findelify</span>
         </a>
