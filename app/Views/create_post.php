@@ -16,7 +16,7 @@
     <!-- SIDEBAR -->
     <section id="sidebar" class="hide">
         <a href="#" class="brand">
-            <i class='bx bx-desktop'></i>
+        <img src="/img/logo.png" alt="Logo Icon" class="logo" >
 
             <span class="text">Findelify</span>
         </a>
@@ -77,10 +77,10 @@
             </form>
             <input type="checkbox" id="switch-mode" hidden>
             <label for="switch-mode" class="switch-mode"></label>
-            <a href="#" class="notification">
+            <!-- <a href="#" class="notification">
                 <i class='bx bxs-bell'></i>
                 <span class="num">8</span>
-            </a>
+            </a> -->
         </nav>
         <!-- NAVBAR -->
 

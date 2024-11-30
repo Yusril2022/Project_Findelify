@@ -16,7 +16,7 @@
     <!-- SIDEBAR -->
     <section id="sidebar" class="hide">
         <a href="#" class="brand">
-        <img src="/img/logo.png" alt="Logo Icon" style="width: 100%; ;">       
+        <img src="/img/logo.png" alt="Logo Icon" class="logo" >       
 
             <span class="text">Findelify</span>
         </a>
@@ -77,10 +77,10 @@
             </form>
             <input type="checkbox" id="switch-mode" hidden>
             <label for="switch-mode" class="switch-mode"></label>
-            <a href="#" class="notification" id="notification-icon" data-toggle="modal" data-target="notificationModal">
+            <!-- <a href="#" class="notification" id="notification-icon" data-toggle="modal" data-target="notificationModal">
                 <i class='bx bxs-bell'></i>
                 <span class="num">8</span>
-            </a>
+            </a> -->
         </nav>
         <!-- NAVBAR -->
 

@@ -309,3 +309,28 @@
         .post-info {
             padding: 10px;
         }
+
+
+                /* Default logo size (sidebar closed) */
+#sidebar.hide .logo {
+    width: 65px; /* Sesuaikan ukuran logo untuk sidebar tertutup */
+    transition: width 0.3s ease; /* Animasi halus untuk transisi */
+}
+
+/* Logo size when sidebar is open */
+#sidebar .logo {
+    width: 65px; /* Sesuaikan ukuran logo untuk sidebar terbuka */
+    transition: width 0.3s ease; /* Animasi halus untuk transisi */
+}
+
+/* Default text size (sidebar closed) */
+#sidebar.hide .brand .text {
+    display: none; /* Sembunyikan teks saat sidebar tertutup */
+}
+
+/* Text size when sidebar is open */
+#sidebar .brand .text {
+    display: inline-block; /* Tampilkan teks saat sidebar terbuka */
+    font-size: 25px; /* Sesuaikan ukuran teks */
+    margin-left: 10px; /* Spasi antara logo dan teks */
+}
