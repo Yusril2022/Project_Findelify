@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="<?= base_url(); ?>/css/dash-style.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="<?= base_url(); ?>/css/createPost.css">
+    <style>
+        
+    </style>
 
 </head>
 
@@ -22,7 +25,7 @@
         </a>
         <ul class="side-menu top">
             <li>
-                <a href="/Pages">
+                <a href="/dashboard">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
                 </a>
@@ -46,7 +49,7 @@
                 <a href="/manageAccount">
                     <img src="/img/prof.png" alt="Profile Image" class="profile-pic">
                     <div style="display: flex; flex-direction: column;">
-                        <span class="text">Yusril Mubaroq</span>
+                    <span class="text"><?= session()->get('username') ?? 'Guest'; ?></span>
                         <span class="role">Karawang</span>
                     </div>
                 </a>
@@ -86,31 +89,63 @@
 
         <!-- MAIN -->
         <main>
-            <div class="profile-container">
-                
-                    <form action="/post/store" method="post" enctype="multipart/form-data">
-                                    <label for="title">Judul:</label>
-                                    <input type="text" id="title" name="title" required>
+    <div class="profile-container">
+        <!-- Bagian Header Profil -->
+        <div class="profile-header">
 
-                                    <label for="description">Deskripsi:</label>
-                                    <textarea id="description" name="description" rows="4" required></textarea>
-
-                                    <label for="location">Location</label>
-                                    <input type="text" name="location" id="location">
-
-                                    <label for="contact">Contact</label>
-                                    <input type="text" name="contact" id="contact">
-
-                                    <label for="image">Unggah Gambar:</label>
-                                    <input type="file" id="image" name="image" accept="image/*" required>
-
-                                    <button type="submit">Buat Postingan</button>
-                                </form>
-
+            <div class="profile-details">
+                <img src="/img/prof.png" alt="Foto Profil" class="profile-avatar">
+                <div class="profile-info">
+                    <h2><?= session()->get('username') ?? 'Guest'; ?></h2>
+                    <p class="profile-location">📍 Karawang, Indonesia</p>
+                    <p class="profile-description">"Selalu membantu menemukan yang hilang dan memberikan yang terbaik untuk komunitas."</p>
+                    <button class="edit-profile-btn">Edit Profil</button>
+                </div>
             </div>
+        </div>
+
+        <!-- Statistik Pengguna -->
+        <div class="profile-stats">
+            <div class="stat-item">
+                <h3>🔍 Postingan Hilang</h3>
+                <p>12</p>
+            </div>
+            <div class="stat-item">
+                <h3>🎉 Postingan Ditemukan</h3>
+                <p>8</p>
+            </div>
+            <div class="stat-item">
+                <h3>⚡ Aktivitas</h3>
+                <p>15</p>
+            </div>
+        </div>
+
+        <!-- Form Postingan Baru -->
+        <div class="profile-post-form">
+            <h3>Buat Postingan Baru</h3>
+            <form action="/post/store" method="post" enctype="multipart/form-data">
+                <label for="title">Judul:</label>
+                <input type="text" id="title" name="title" placeholder="Masukkan judul..." required>
+
+                <label for="description">Deskripsi:</label>
+                <textarea id="description" name="description" rows="4" placeholder="Deskripsikan barang yang hilang atau ditemukan..." required></textarea>
+
+                <label for="location">Lokasi:</label>
+                <input type="text" name="location" id="location" placeholder="Masukkan lokasi kejadian...">
+
+                <label for="contact">Kontak:</label>
+                <input type="text" name="contact" id="contact" placeholder="Masukkan informasi kontak...">
+
+                <label for="image">Unggah Gambar:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+
+                <button type="submit" class="submit-post-btn">Buat Postingan</button>
+            </form>
+        </div>
+    </div>
+</main>
 
 
-        </main>
         <!-- MAIN -->
     </section>
     <!-- CONTENT -->

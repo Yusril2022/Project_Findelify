@@ -33,7 +33,11 @@ class AuthController extends Controller
         $model = new UserModel();
         $user = $model->getUser($this->request->getPost('username'));
         if ($user && password_verify($this->request->getPost('password'), $user['password'])) {
-            session()->set('user_id', $user['id']);
+            session()->set([
+                'user_id' => $user['id'],
+                'username' => $user['username'],
+                'is_logged_in' => true
+        ]);
             return redirect()->to('/posts');
         }
         return redirect()->to('/login')->with('error', 'Invalid username or password');

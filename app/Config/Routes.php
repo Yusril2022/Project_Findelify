@@ -31,6 +31,9 @@ $routes->get('search', 'SearchController::search');
 $routes->get('notifications', 'NotificationController::getNotifications');
 $routes->post('notifications/markAllAsRead', 'NotificationController::markAllAsRead');
 
+//Dashboard
+$routes->get('/dashboard', 'DashboardController::index');
+
 
 
 

@@ -11,12 +11,6 @@
 </head>
 
 <body>
-
-
-
-
-
-
     <!-- SIDEBAR -->
     <section id="sidebar" class="hide">
         <a href="#" class="brand">
@@ -26,7 +20,7 @@
         </a>
         <ul class="side-menu top">
             <li>
-                <a href="/Pages">
+                <a href="/dashboard">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
                 </a>
@@ -50,7 +44,7 @@
                 <a href="/post/create">
                     <img src="/img/prof.png" alt="Profile Image" class="profile-pic">
                     <div style="display: flex; flex-direction: column;">
-                        <span class="text">Yusril Mubaroq</span>
+                    <span class="text"><?= session()->get('username') ?? 'Guest'; ?></span>
                         <span class="role">Karawang</span>
                     </div>
                 </a>
