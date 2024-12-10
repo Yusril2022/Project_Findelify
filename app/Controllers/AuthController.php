@@ -38,7 +38,7 @@ class AuthController extends Controller
                 'username' => $user['username'],
                 'is_logged_in' => true
         ]);
-            return redirect()->to('/posts');
+            return redirect()->to('/dashboard');
         }
         return redirect()->to('/login')->with('error', 'Invalid username or password');
     }

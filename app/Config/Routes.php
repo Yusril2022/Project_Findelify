@@ -27,10 +27,9 @@ $routes->post('post/markAsFound/(:num)', 'PostController::markAsFound/$1');
 $routes->get('posts/(:num)', 'PostController::show/$1');
 // Pencarian
 $routes->get('search', 'SearchController::search');
-
+// Notifikasi
 $routes->get('notifications', 'NotificationController::getNotifications');
 $routes->post('notifications/markAllAsRead', 'NotificationController::markAllAsRead');
-
 //Dashboard
 $routes->get('/dashboard', 'DashboardController::index');
 
