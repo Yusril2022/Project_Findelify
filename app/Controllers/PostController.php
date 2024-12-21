@@ -32,8 +32,8 @@ class PostController extends Controller
             'title' => $this->request->getPost('title'),
             'description' => $this->request->getPost('description'),
             'image' => $imageName,
-            'location' => $this->request->getPost('location'), // Tambahkan location
-            'contact' => $this->request->getPost('contact') // Tambahkan contact
+            'location' => $this->request->getPost('location'), 
+            'contact' => $this->request->getPost('contact') 
         ];
         $model->save($data);
         return redirect()->to('/posts');

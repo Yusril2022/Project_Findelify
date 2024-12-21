@@ -29,19 +29,38 @@ class AuthController extends Controller
     }
 
     public function loginProcess()
-    {
-        $model = new UserModel();
-        $user = $model->getUser($this->request->getPost('username'));
-        if ($user && password_verify($this->request->getPost('password'), $user['password'])) {
-            session()->set([
-                'user_id' => $user['id'],
-                'username' => $user['username'],
-                'is_logged_in' => true
-        ]);
-            return redirect()->to('/dashboard');
-        }
-        return redirect()->to('/login')->with('error', 'Invalid username or password');
+{
+    $model = new UserModel();
+    $username = $this->request->getPost('username');
+    $password = $this->request->getPost('password');
+
+    // Periksa apakah username ada di database
+    $user = $model->getUser($username);
+    if (!$user) {
+        // Jika username tidak ditemukan
+        session()->setFlashdata('pesan', 'Username salah!');
+        return redirect()->to('/login');
     }
+
+    // Periksa password
+    if (!password_verify($password, $user['password'])) {
+        // Jika password salah
+        session()->setFlashdata('pesan', 'Password salah!');
+        return redirect()->to('/login');
+    }
+
+    // Jika username dan password benar, set session dan redirect ke dashboard
+    session()->set([
+        'user_id' => $user['id'],
+        'username' => $user['username'],
+        'is_logged_in' => true
+    ]);
+    return redirect()->to('/dashboard')->with('pesan', 'Berhasil login!');
+}
+
+    
+
+    
 
     public function logout()
     {

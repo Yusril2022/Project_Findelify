@@ -9,148 +9,12 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="<?= base_url(); ?>/css/lostItem.css">
     <style>
-        /* Kategori */
-.categories {
-    margin: 20px 0;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.categories h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.category-list {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.category-item {
-    padding: 8px 15px;
-    font-size: 14px;
-    color: #ffffff;
-    background-color: #3498db;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.category-item:hover {
-    background-color: #2980b9;
-}
-
-/* Postingan Terbaru */
-.latest-posts {
-    margin: 30px 0;
-    padding: 15px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.latest-posts h2 {
-    margin-bottom: 15px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333333;
-}
-
-.post-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 15px 0;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.post-item:last-child {
-    border-bottom: none;
-}
-
-.post-item img {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.post-info {
-    flex: 1;
-}
-
-.post-info h3 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333333;
-    margin-bottom: 5px;
-}
-
-.post-info p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #555555;
-}
-
-.post-info small {
-    font-size: 12px;
-    color: #888888;
-}
-
-.btn-detail {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    font-size: 14px;
-    color: #ffffff;
-    background-color: #2ecc71;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.btn-detail:hover {
-    background-color: #27ae60;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    .categories, .latest-posts {
-        padding: 10px;
-    }
-
-    .category-item {
-        font-size: 12px;
-        padding: 5px 10px;
-    }
-
-    .post-item img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .post-info h3 {
-        font-size: 16px;
-    }
-
-    .post-info p {
-        font-size: 12px;
-    }
-
-    .btn-detail {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
-}
-
+        
     </style>
 </head>
 
 <body>
+    
 
     <!-- SIDEBAR -->
     <section id="sidebar" class="hide">
@@ -201,8 +65,10 @@
 
     <!-- CONTENT -->
     <section id="content">
+        
         <!-- NAVBAR -->
         <nav>
+            
             <i class='bx bx-menu'></i>
             <form action="<?= site_url('search') ?>" method="get">
                 <div class="form-input">
@@ -217,6 +83,14 @@
 
         <!-- MAIN -->
         <main>
+            <!-- Notifikasi -->
+    <?php if (session()->getFlashdata('pesan')) : ?>
+        <div id="notification" class="notification">
+            <!-- Tambahkan gambar logo -->
+            <img src="/img/logo.png" alt="Success Logo">
+            <?= session()->getFlashdata('pesan'); ?>
+        </div>
+    <?php endif; ?>
             <div class="head-title">
                 <div class="left">
                     <h1>Dashboard</h1>
@@ -271,3 +145,6 @@
 </html>
 
 <script src="<?= base_url(); ?>/js/script_lostItem.js"></script>
+<script>
+       
+    </script>

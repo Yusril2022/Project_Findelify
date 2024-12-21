@@ -116,3 +116,44 @@ button:hover {
 .link a:hover {
     text-decoration: underline;
 }
+
+
+/* Animasi untuk notifikasi */
+.notification {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff; /* Warna merah untuk error */
+    color: #721c24;
+    padding: 10px 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spasi antara gambar dan teks */
+    transition: top 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.notification.success {
+    background-color: #d4edda; /* Warna hijau untuk sukses */
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.notification img {
+    width: 40px;
+    height: 40px;
+}
+
+.notification.show {
+    top: 20px; /* Posisi muncul */
+}
+
+.notification.hide {
+    opacity: 0;
+}

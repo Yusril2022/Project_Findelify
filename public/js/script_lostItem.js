@@ -165,4 +165,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+ // Ambil elemen notifikasi
+ const notification = document.getElementById('notification');
 
+ if (notification) {
+     // Tambahkan kelas 'show' untuk menampilkan notifikasi
+     setTimeout(() => {
+         notification.classList.add('show');
+     }, 100); // Delay 100ms agar smooth
+
+     // Hapus notifikasi setelah 3 detik
+     setTimeout(() => {
+         notification.classList.add('hide'); // Tambahkan efek hide
+     }, 3000); // Tampilkan selama 3 detik
+
+     // Hapus elemen dari DOM setelah efek hide selesai
+     setTimeout(() => {
+         notification.remove();
+     }, 3500);
+ }
